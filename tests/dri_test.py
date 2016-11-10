@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-# setup.py
+# dri_test.py
 #
 # Copyright (C) 2016 Patrick Griffis <tingping@tingping.se>
 #
@@ -16,18 +15,16 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-from setuptools import setup
+import unittest
 
-# TODO: Translate and install data files
+from driconfig import dri
 
-setup(
-    name='dri-config',
-    version='0.1.0',
-    description='A configuration tool for DRI drivers',
-    author='Patrick Griffis',
-    author_email='tingping@tingping.se',
-    license='GPL3+',
-    packages=['driconfig'],
-    test_suite='tests',
-    classifiers=['Programming Language :: Python :: 3 :: Only'],
-)
+class DriTests(unittest.TestCase):
+    def test_load(self):
+        self.conf = dri.DRIConfig('tests/drirc.xml')
+        self.assertEqual(len(self.conf.devices), 2)
+        self.assertEqual(len(self.conf.devices[0].apps), 3)
+        self.assertEqual(len(self.conf.devices[1].apps[0].options), 2)
+
+if __name__ == '__main__':
+    unittest.main()

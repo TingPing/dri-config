@@ -1,0 +1,4 @@
+data/se.tingping.DriConfig.desktop.in
+driconfig/about.py
+driconfig/window.py
+driconfig/__main__.py

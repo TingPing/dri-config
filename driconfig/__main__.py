@@ -45,8 +45,14 @@ class Application(Gtk.Application):
         action.connect('activate', self.on_about)
         self.add_action(action)
 
+        action = Gio.SimpleAction.new('quit', None)
+        action.connect('activate', self.on_quit)
+        self.add_action(action)
+        self.add_accelerator('<Primary>q', 'app.quit')
+
         app_menu = Gio.Menu.new()
         app_menu.append(_('About'), 'app.about')
+        app_menu.append(_('Quit'), 'app.quit')
         self.set_app_menu(app_menu)
 
     def do_command_line(self, command_line) -> int:
@@ -69,12 +75,14 @@ class Application(Gtk.Application):
         Gtk.Application.do_shutdown(self)
         if self.window:
             self.window.destroy()
-            self.window = None
 
     def on_about(self, action, param):
         if not self.dialog:
             self.dialog = AboutDialog(transient_for=self.window)
         self.dialog.present()
+
+    def on_quit(self, action, param):
+        self.window.destroy()
 
 if __name__ == '__main__':
     app = Application()

@@ -1,0 +1,22 @@
+<driconf>
+  <device screen="0" driver="radeon">
+    <application name="all">
+      <!-- Always synchronize with vertical refresh to avoid tearing -->
+      <option name="vblank_mode" value="3"/>
+    </application>
+    <application name="glxgears" executable="glxgears">
+      <!-- glxgears should not synchronize with vertical refresh, show full fps -->
+      <option name="vblank_mode" value="0"/>
+    </application>
+    <application name="tuxracer" executable="tuxracer">
+      <!-- Tuxrace has some artifacts with hardware TCL -->
+      <option name="tcl_mode" value="0"/>
+    </application>
+  </device>
+  <device>
+    <application name="Unigine Sanctuary" executable="Sanctuary">
+      <option name="force_glsl_extensions_warn" value="true" />
+      <option name="disable_blend_func_extended" value="true" />
+    </application>
+  </device>
+</driconf>

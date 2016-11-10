@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=DRI Configuration
+Comment=Configure DRI options for applications
+Exec=driconfig
+Icon=se.tingping.DriConfig
+Terminal=false
+Type=Application

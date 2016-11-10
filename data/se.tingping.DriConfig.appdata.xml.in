@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>se.tingping.DriConfig.desktop</id>
+  <translation type="gettext">driconfig</translation>
+  <name>DRI Configuration</name>
+  <developer_name>Patrick Griffis</developer_name>
+  <summary>Tool to modify DRI configuration</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+  <description>
+    <p>TODO</p>
+  </description>
+  <url type="bugtracker">https://github.com/TingPing/dri-config/issues</url>
+  <screenshots>
+    <!-- TODO -->
+  </screenshots>
+  <kudos>
+    <kudo>AppMenu</kudo>
+    <!--kudo>HiDpiIcon</kudo-->
+    <kudo>ModernToolkit</kudo>
+  </kudos>
+  <update_contact>tingping_at_tingping.se</update_contact>
+</component>
